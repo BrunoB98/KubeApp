@@ -30,11 +30,6 @@ try {
 	out.println(e.getMessage());
 }
 %>
-
-<%!
-public void modifyOrder() {
-	
-}%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -127,6 +122,5 @@ while(exit) {
 }%>
 </table>
 </form>
-<%modifyOrder();%>
 </body>
 </html>

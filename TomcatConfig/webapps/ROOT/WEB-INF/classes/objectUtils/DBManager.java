@@ -14,7 +14,7 @@ public class DBManager {
 	private static final String ROOT_PASSWORD = System.getenv("APPDB_PASS");
 	private static final String PORT = System.getenv("APPDB_SERVICE_PORT");
 	public static final String JDBCDriverMySQL = "com.mysql.jdbc.Driver";
-	public static final String JDBCURLMySQL = "jdbc:mysql://" + "172.18.0.2" + ":" + PORT + "/"+ DBNAME + "?user=" + ROOT_HOSTNAME + "&password=" + ROOT_PASSWORD + "&useSSL=false";
+	public static final String JDBCURLMySQL = "jdbc:mysql://" + ADDRESS + ":" + PORT + "/"+ DBNAME + "?user=" + ROOT_HOSTNAME + "&password=" + ROOT_PASSWORD + "&useSSL=false";
 	protected Statement statement;
 	protected Connection connection;
 	private static DBManager uniqueInstance;
@@ -40,7 +40,7 @@ public class DBManager {
 			connection = DriverManager.getConnection(JDBCURL);
 			statement = connection.createStatement(resultSetType, resultSetConcurrency);
 		} catch (Exception e) {
-			connection = DriverManager.getConnection("jdbc:mysql://" + "172.18.0.2" + ":" + PORT + "/mysql", ROOT_HOSTNAME, ROOT_PASSWORD);
+			connection = DriverManager.getConnection("jdbc:mysql://" + ADDRESS + ":" + PORT + "/mysql", ROOT_HOSTNAME, ROOT_PASSWORD);
 			statement = connection.createStatement(resultSetType, resultSetConcurrency);
 			statement.executeUpdate("CREATE DATABASE " + DBNAME);
 			statement.executeUpdate("USE " + DBNAME);

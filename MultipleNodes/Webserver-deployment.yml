@@ -20,7 +20,7 @@ spec:
       nodeSelector:
         et: hello
       containers:
-      - image: triennaltesin98/tomcat:1.6.2
+      - image: triennaltesin98/tomcat:1.6.3
         name: webserver
         env:
         - name: APPDB_USER

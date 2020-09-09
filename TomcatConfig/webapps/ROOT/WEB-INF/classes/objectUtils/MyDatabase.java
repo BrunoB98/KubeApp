@@ -24,10 +24,11 @@ public class MyDatabase {
 			db.executeUpdate("INSERT INTO product (id, name, price, description) VALUES (132, 'Telo mare', 5.0, 'Telo mare 80x90 in cotone.')");
 			db.executeUpdate("INSERT INTO product (id, name, price, description) VALUES (155, 'Sedia', 40.0, 'Sedia in legno di ciliegio.')");
 			db.executeUpdate("INSERT INTO product (id, name, price, description) VALUES (33, 'Ombrellone', 10.50, 'Ombrellone giallo, altezza 180cm.')");
-		/*	
-			db.executeUpdate("CREATE TABLE order (id INTEGER NOT NULL PRIMARY KEY, total DOUBLE NOT NULL, date VARCHAR(12) NOT NULL, receiver VARCHAR(30) NOT NULL)");
-			db.executeUpdate("CREATE TABLE po (idp INTEGER NOT NULL, ido INTEGER NOT NULL, quantity INTEGER NOT NULL, FOREIGN KEY (idp) REFERENCES product(id), FOREIGN KEY (ido) REFERENCES ordini(id), PRIMARY KEY (idp, ido))");
-			*/
+			db.executeUpdate("INSERT INTO product (id, name, price, description) VALUES (13, 'Sedile', 25.50, 'Sedile auto opel')");
+			db.executeUpdate("INSERT INTO product (id, name, price, description) VALUES (14, 'Computer', 150.0, 'Asus 12 GB ram')");
+			db.executeUpdate("INSERT INTO product (id, name, price, description) VALUES (233, 'Porta scorrevole', 50.0, 'Altezza 190 cm')");
+			db.executeUpdate("INSERT INTO product (id, name, price, description) VALUES (333, 'Pinocchio', 40.0, 'Libro vecchio')");
+			db.executeUpdate("INSERT INTO product (id, name, price, description) VALUES (197, 'Chiavetta USB', 10.50, 'Chiavetta USB 10 GB')");
 			} catch (Exception e2) {
 				e.printStackTrace();
 			}
@@ -74,7 +75,7 @@ public class MyDatabase {
 		}
 	}
 	
-	public boolean insertOrder(Order o) {
+/*	public boolean insertOrder(Order o) {
 		try {
 			int ido, idp;
 			do {
@@ -101,7 +102,7 @@ public class MyDatabase {
 			e.printStackTrace();
 			return false;
 		}
-	}
+	}*/
 	
 	public int selectProduct(String name) {
 		try {
@@ -114,7 +115,7 @@ public class MyDatabase {
 		}
 	}
 	
-	public boolean orderPresent (int id) {
+	/*public boolean orderPresent (int id) {
 		try {
 			String query = String.format("SELECT * FROM ordini WHERE id = %d", id);
 			rs = db.executeQuery(query);
@@ -137,7 +138,7 @@ public class MyDatabase {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 	public void printRow(ResultSet rs) throws SQLException {
 		System.out.println("username=" + rs.getString("username") + ", password="
